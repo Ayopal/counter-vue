@@ -4,7 +4,7 @@
     <div class="left">
          <h1>Co<span>unt</span>ly </h1>
          <p class="midtext">
-             "The countly web app is a simple tool that  <span style="color:#FE6142"> keeps track of product count </span>  and displays to the user." 
+             "The countly web app is a simple tool that<span style="color:#FE6142"> keep track of users input in % </span>to fill a box with color and displays to the user." 
          </p>
     <p class="endtext"> The counter web app is a convenient and easy way to keep track of numerical data in real-time.</p>
 
@@ -174,7 +174,7 @@ button{
 
 
 @media only screen and (max-width: 800px) {
-  
+
 }
 
 </style>
