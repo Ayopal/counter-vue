@@ -37,7 +37,7 @@
 		<div class="box1">
 			<div
 				class="box2"
-				:style="{ width: `${count + 10}%`, height: `${count + 10}%` }"
+				:style="{ width: `${count}%`, height: `${count}%` }"
 			></div>
 		</div>
 	</div>
@@ -122,8 +122,6 @@ input{
 .box2 {
 	position: absolute;
 	background: #0756e9;
-	width: 10%;
-	height: 10%;
 	top: 0;
 	left: 0;
 	border: 1px solid black;
