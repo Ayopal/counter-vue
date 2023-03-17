@@ -13,7 +13,7 @@
 				v-model.number="newValue"
 			/>
 			
-			<p>Countly: {{ count }}</p>
+			<p class="countly">Countly: {{ count }}</p>
 
 			<select v-model="color">
 				<option value='' disabled selected>Select a color to Fill Box</option>
@@ -90,7 +90,7 @@ console.log(msg);
 
 
 input{
-	width: 100%;
+	width: 60%;
 	height: 40px;
 	padding: 1rem;
 }
@@ -124,17 +124,31 @@ padding: 5px;
 	gap: 10px;
 
 }
+.left-content {
+	width: 40%;
+}
+
+
 
 .count{
 	position: relative;
 	border: 1px solid black;
 	padding: 5rem 10rem;
 	margin-bottom: 20px;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.countly {
+	font-size: 16px;
+	font-weight: 600;
 }
 
 .error {
 	position: absolute;
 	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .box1 {
@@ -221,15 +235,94 @@ h3 {
 
 .error {
 	position: absolute;
-	bottom: 0%;
-	left: -35%;
-	right: 0%;
-	white-space: nowrap;
-	/* text-align: center; */
+	bottom: -5%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
 	font-size: 12px;
 	
 	
 }
 
+}
+
+@media only screen and (min-width: 820px) and (max-width: 1024px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.left-content {
+		width: 100%;
+		flex: 1;
+	}
+
+	.count {
+		position: relative;
+		border: none;
+		padding: 1rem 0rem 0rem;
+		margin-bottom: 20px;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.countly {
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 5px;
+	margin: 5px 0px;
+}
+
+	h3 {
+		font-size: 18px;
+		width: 100%;
+		display: block;
+		white-space: nowrap;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.btn {
+		gap: 10px;
+		margin-bottom: 5px;
+	}
+
+	.btn1,
+	.btn2 {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.box1 {
+		width: 100vw;
+		height: 100vh;
+		;
+		border: 1px solid black;
+		position: relative;
+	}
+
+	.box2 {
+		position: absolute;
+		background: #0756e9;
+		top: 0;
+		left: 0;
+		border: 1px solid black;
+
+	}
+
+	.error {
+		position: absolute;
+		bottom: -5%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		/* white-space: nowrap; */
+		font-size: 12px;
+	}
 }
 </style>

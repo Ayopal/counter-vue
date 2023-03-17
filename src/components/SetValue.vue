@@ -40,4 +40,9 @@ button {
 		display: none;
 	}
 }
+@media only screen and (min-width: 820px) and (max-width: 1024px){
+   button{
+      width: 150px;
+   }
+}
 </style>
