@@ -35,7 +35,7 @@ export function useCounter() {
 		} else {
 			count.value--;
 			newValue.value = count.value;
-			msg.value = " ";
+			msg.value = "unloading...";
 		}
 	};
 	const resetValue = () => {
