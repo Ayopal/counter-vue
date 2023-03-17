@@ -31,7 +31,6 @@
 <style scoped>
 .container {
 	width: 100%;
-	height: 85vh;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -40,6 +39,8 @@
 	padding: 0rem 6rem;
 	background: #fff;
 	gap: 100px;
+	height: 85vh;
+
 }
 
 .left {
@@ -175,27 +176,31 @@ button {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		height: 100%;
 		align-items: center;
 		justify-content: center;
 		padding: 10% 5%;
 		gap: 0px;
+    height: 100%;
 	}
 	h1 {
 		font-size: 3rem;
 		margin-bottom: 10px;
+    text-align: center;
+    margin-top: 0;
 	}
 
 	.left {
 		order: 2;
 		flex: 1;
-		margin: 0px;
+		margin-top: 20px;
 		padding: 0;
+    width: 100%;
 	}
 
 	.right {
-		flex: 1;
+		width: 100%;
 		order: 1;
+    flex:1;
 		margin: 0px;
 	}
 
@@ -205,6 +210,7 @@ button {
 
 	.midtext {
 		font-size: 18px;
+    text-align: center;
 	}
 
 	.endtext {
@@ -215,11 +221,62 @@ button {
 		width: 100%;
 		font-size: 24px;
 		font-weight: 600;
-		margin: 0px;
+		margin-top: 20px;
 	padding: .6em 0em;
 
 	}
 }
 
+
+@media only screen and (min-width: 820px) and (max-width: 1024px) {
+
+.container {
+	height: 100%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		padding: 10% 5%;
+		gap: 0px;
+	}
+
+  .bn5 {
+		width: 100%;
+		font-size: 24px;
+		font-weight: 600;
+		margin-top: 30px;
+	padding: .6em 0em;
+
+	}
+
+	.left {
+    order: 2;
+		width: 100%;
+		margin: 0px;
+		padding: 0;
+    flex:1;
+	}
+
+	.right {
+		width: 100%;
+    order: 1;
+    flex: 1;
+	}
+
+h1{
+  text-align: center;
+}
+
+  .midtext{
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .hero-img {
+    width: 100%;
+  }
+
+}
 
 </style>
