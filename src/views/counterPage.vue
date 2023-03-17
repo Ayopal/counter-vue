@@ -14,7 +14,18 @@
 			/>
 			
 			<p>Countly: {{ count }}</p>
-			<!-- <p>Counter: {{ increase }}   </p> -->
+
+			<select v-model="color">
+				<option value='' disabled selected>Select a color to Fill Box</option>
+				<option value="#ff0000">Red</option>
+				<option value="#0000FF">Blue</option>
+				<option value="#CF990F"> Gold</option>
+				<option value="#000000"> Black </option>
+			</select>
+			<h3> Hexcode: <span :style="{color: `${color}`}"> {{ color }} </span> </h3>
+			<!-- <p>Counter: {{ error.value }}   </p> -->
+			<p v-if ="color" style="color:green" class="error"> {{ msg }}   </p>
+			<p v-if ="!color" style="color:red" class="error"> {{ msg }}   </p>
 			</div>
 
 			<div class="btn">
@@ -27,17 +38,17 @@
 				<reset @click="resetValue" class="button"/>
 				<setvalue @click="setValue" value="newValue" class="button"/>
 			</div>
-		
 		</div>
-		</div>
-
-		
-		<!-- <p :style="{fontSize: `${count}rem`}">Here is the counter pages</p> -->
+	</div>
+	
+	<!-- <p :style="{fontSize: `${count}rem`}">Here is the counter pages</p> -->
+	
+	
 
 		<div class="box1">
 			<div
 				class="box2"
-				:style="{ width: `${count}%`, height: `${count}%` }"
+				:style="{ width: `${count}%`, height: `${count}%`, background: `${color}` }"
 			></div>
 		</div>
 	</div>
@@ -53,18 +64,23 @@ import setvalue from "../components/SetValue";
 
 import { useCounter } from "../composable/counter";
 
-const { count, newValue, increase, decrease, resetValue, setValue } =
+const { msg, color, count, newValue, increase, decrease, resetValue, setValue } =
 	useCounter();
 
+
 // console.log(newValue.value);
-// console.log(count.value);
+console.log(msg);
+
+
+
+
 </script>
 
 <style scoped>
 /* color: #C5CBD6 */
 
 .container {
-	background: #c5cbd6;
+	/* background: #c5cbd6; */
 	height: 85vh;
 	display: flex;
 	align-items: center;
@@ -79,6 +95,9 @@ input{
 	padding: 1rem;
 }
 
+select{
+padding: 5px;
+}
 
 .btn {
 	display: flex;
@@ -94,7 +113,7 @@ input{
 }
 
 .button:hover{
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .btn1, .btn2, .count {
@@ -107,9 +126,15 @@ input{
 }
 
 .count{
+	position: relative;
 	border: 1px solid black;
 	padding: 5rem 10rem;
 	margin-bottom: 20px;
+}
+
+.error {
+	position: absolute;
+	bottom: 10%;
 }
 
 .box1 {
@@ -125,5 +150,86 @@ input{
 	top: 0;
 	left: 0;
 	border: 1px solid black;
+}
+
+
+@media only screen and (max-width:800px){
+.container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+.left-content {
+	width: 100%;
+	flex: 1;
+}
+
+
+
+.count{
+	position: relative;
+	border: none;
+	padding: 1rem 0rem 0rem;
+	margin-bottom: 20px;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+h3 {
+	font-size: 14px;
+	width: 100%;
+	display: block;
+	white-space: nowrap;
+	text-align:center;
+	margin-bottom: 20px;
+}
+
+.btn {
+	gap: 30px;
+	margin-bottom: 5px;
+}
+
+.btn1, .btn2 {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+
+}
+
+.box1 {
+	width: 100vw;
+	height: 100vh;;
+	border: 1px solid black;
+	position: relative;
+}
+
+.box2 {
+	position: absolute;
+	background: #0756e9;
+	top: 0;
+	left: 0;
+	border: 1px solid black;
+	/* border-radius: 0px 0px 50px 50px; */
+}
+
+.error {
+	position: absolute;
+	bottom: 0%;
+	left: -35%;
+	right: 0%;
+	white-space: nowrap;
+	/* text-align: center; */
+	font-size: 12px;
+	
+	
+}
+
 }
 </style>

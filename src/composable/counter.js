@@ -5,10 +5,16 @@ import { ref } from "vue";
 export function useCounter() {
 	const count = ref(0);
 	const newValue = ref(0);
+	const color = ref("");
+	var msg = ref("");
 
 	const increase = () => {
 		if (count.value == 100) {
-			alert("You can't add more than 100 X");
+			// alert("You can't add more than 100 X");
+			msg.value = "Error: Please add a number between 0 - 100 X";
+		} else if (color.value == "") {
+			// alert("You can't add more than 100 X");
+			msg.value = "Error: Please select a color to conitnue";
 		} else {
 			count.value++;
 			newValue.value = count.value;
@@ -20,7 +26,10 @@ export function useCounter() {
 
 	const decrease = () => {
 		if (count.value < 0) {
-			alert("You can't go below 0");
+			msg.value = "Error: Please add a number between 0 - 100 X";
+		} else if (color.value == "") {
+			// alert("You can't add more than 100 X");
+			msg.value = "Error: Please select a color to conitnue";
 		} else {
 			count.value--;
 			newValue.value = count.value;
@@ -29,15 +38,34 @@ export function useCounter() {
 	const resetValue = () => {
 		count.value = 0;
 		newValue.value = 0;
+		color.value = "";
+		msg.value = "";
 	};
 
 	const setValue = () => {
 		if (newValue.value > 100 || newValue.value < 0) {
-			alert("You can't add more than 5 items");
+			msg.value = "Error: Please add a number between 0 - 100 X";
+		} else if (newValue.value == 100 && color.value !== "") {
+			msg.value = " You have reached the maximum value of 100 X";
+			count.value = newValue.value;
+
+		} else if (color.value == "") {
+			
+			msg.value = "Error: Please select a color to conitnue";
 		} else {
 			count.value = newValue.value;
+			msg.value = "";
 		}
 	};
 
-	return { count, newValue, increase, decrease, resetValue, setValue };
+	return {
+		msg,
+		color,
+		count,
+		newValue,
+		increase,
+		decrease,
+		resetValue,
+		setValue,
+	};
 }

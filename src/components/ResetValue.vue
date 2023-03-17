@@ -1,21 +1,13 @@
-<template>
-   <button>
-    Reset <span>
-        <img src="../assets/reset.png" alt="">
-    </span> 
-   </button>
+<!-- @format -->
 
+<template>
+	<button>
+		<span> Reset </span>
+		<img src="../assets/reset.png" alt="" />
+	</button>
 </template>
 
-
-
-
-
-
-
 <style scoped>
-
-
 /* colors
 #CF990F - gold
 #8D8F92 - grey
@@ -23,24 +15,32 @@
 #DEE1E6- light grey
  */
 
-
-
 button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    background: #8D8F92;
-    color: #000;
-     padding: 0.5rem 1rem;
-     font-size: 18px;
-    font-weight: 600;
-    outline: none;
-    border-radius: 50px;
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	background: #8d8f92;
+	color: #000;
+	padding: 0.5rem 1rem;
+	font-size: 18px;
+	font-weight: 600;
+	outline: none;
+	border-radius: 50px;
+	width: 200px;
+	cursor: pointer;
 }
 
-button img{
-    width: 65%;
+button img {
+	width: 28px;
+}
+@media only screen and (max-width: 800px) {
+	button {
+		border-radius: 25%;
+		width: 50px;
+	}
+	button span {
+		display: none;
+	}
 }
 </style>
