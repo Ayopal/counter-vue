@@ -27,7 +27,7 @@ export function useCounter() {
 
 	const decrease = () => {
 		if (count.value < 1) {
-			msg.value = "Error: Please add a number between 1 - 100 X";
+			msg.value = "Error: Please pick a color and add a number between 1 - 100 X";
 		} else if (color.value == "") {
 			// alert("You can't add more than 100 X");
 			msg.value = "Error: Please select a color to conitnue";
