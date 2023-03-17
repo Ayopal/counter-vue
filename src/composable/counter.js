@@ -18,7 +18,7 @@ export function useCounter() {
 		} else {
 			count.value++;
 			newValue.value = count.value;
-			msg.value = "loading...";
+			msg.value = "loading";
 
 
 			// console.log(typeof(newValue.value));
@@ -27,15 +27,15 @@ export function useCounter() {
 	};
 
 	const decrease = () => {
-		if (count.value < 0) {
-			msg.value = "Error: Please add a number between 0 - 100 X";
+		if (count.value < 1) {
+			msg.value = "Error: Please add a number between 1 - 100 X";
 		} else if (color.value == "") {
 			// alert("You can't add more than 100 X");
 			msg.value = "Error: Please select a color to conitnue";
 		} else {
 			count.value--;
 			newValue.value = count.value;
-			msg.value = "unloading...";
+			msg.value = "unloading ";
 		}
 	};
 	const resetValue = () => {
@@ -46,8 +46,8 @@ export function useCounter() {
 	};
 
 	const setValue = () => {
-		if (newValue.value > 100 || newValue.value < 0) {
-			msg.value = "Error: Please add a number between 0 - 100 X";
+		if (newValue.value > 100 || newValue.value < 1) {
+			msg.value = "Error: Please add a number between 1 - 100 X";
 		} else if (newValue.value == 100 && color.value !== "") {
 			msg.value = " You have reached the maximum value of 100 X";
 			count.value = newValue.value;
