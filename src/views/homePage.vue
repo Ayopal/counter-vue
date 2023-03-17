@@ -6,7 +6,7 @@
 			<h1>Co<span>unt</span>ly</h1>
 			<p class="midtext">
 				"The countly web app is a simple tool that<span style="color: #fe6142">
-					keeps track of users input in % </span
+					keeps track of users input in % when a user click on (increase, decrease and setvalue button) </span
 				>to fill a box with color and displays to the user."
 			</p>
 			<p class="endtext">

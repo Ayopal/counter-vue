@@ -24,8 +24,12 @@
 			</select>
 			<h3> Hexcode: <span :style="{color: `${color}`}"> {{ color }} </span> </h3>
 			<!-- <p>Counter: {{ error.value }}   </p> -->
-			<p v-if ="color" style="color:green" class="error"> {{ msg }}   </p>
-			<p v-if ="!color" style="color:red" class="error"> {{ msg }}   </p>
+			<p v-show ="color && count == 100" style="color:green" class="error"> {{ msg }}   </p>
+			<p v-show ="color && count >= 1" style="color:green" class="error"> {{ msg }}   </p>
+			<p v-show ="color && count < 1" style="color:green" class="error"> {{ msg }}   </p>
+			<p v-if ="!color && count == 0" style="color:red" class="error"> {{ msg }}   </p>
+			<p v-if ="count <= 0" style="color:red" class="error"> {{ msg }}   </p>
+			<p v-if ="count > 100" style="color:red" class="error"> {{ msg }}   </p>
 			</div>
 
 			<div class="btn">
