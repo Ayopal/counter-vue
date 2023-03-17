@@ -18,6 +18,8 @@ export function useCounter() {
 		} else {
 			count.value++;
 			newValue.value = count.value;
+			msg.value = "loading...";
+
 
 			// console.log(typeof(newValue.value));
 			// console.log(typeof(count.value));
