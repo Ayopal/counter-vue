@@ -216,6 +216,8 @@ button {
 		font-size: 24px;
 		font-weight: 600;
 		margin: 0px;
+	padding: .6em 0em;
+
 	}
 }
 </style>
